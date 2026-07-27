@@ -2,6 +2,8 @@
 on:
   push:
     branches: [lightsession-transfer-v130]
+  pull_request:
+    branches: [main]
 permissions:
   contents: read
 jobs:
