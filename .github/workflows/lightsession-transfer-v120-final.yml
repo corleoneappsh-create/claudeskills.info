@@ -1,0 +1,16 @@
+﻿name: LightSession APK Transfer v1.2.0 Final
+on:
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  transfer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lightsession-v1-2-0-final
+          path: downloads/LightSession-Android-v1.2.0.apk
+          retention-days: 1
