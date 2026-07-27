@@ -1,0 +1,16 @@
+﻿name: LightSession APK Transfer v1.3.0
+on:
+  push:
+    branches: [lightsession-transfer-v130]
+permissions:
+  contents: read
+jobs:
+  transfer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lightsession-v1-3-0
+          path: downloads/LightSession-Android-v1.3.0.apk
+          retention-days: 1
