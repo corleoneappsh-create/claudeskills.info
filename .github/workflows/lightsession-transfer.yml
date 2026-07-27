@@ -1,0 +1,15 @@
+﻿name: LightSession APK Transfer
+on:
+  pull_request:
+    branches: [main]
+jobs:
+  upload-apk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lightsession-v1-1-0
+          path: downloads/LightSession-Android-v1.1.0.apk
+          if-no-files-found: error
+          retention-days: 1
